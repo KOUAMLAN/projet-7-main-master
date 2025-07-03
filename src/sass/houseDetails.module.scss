@@ -1,0 +1,141 @@
+@use "./global" as *;
+
+.housePhotos {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.housePhotos img {
+    width: 100%;
+    height: 425px;
+    object-fit: cover;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: $white-color;
+    cursor: pointer;
+}
+
+.icon:first-child {
+    left: 38px;
+}
+
+.icon:last-child {
+    right: 38px;
+}
+
+.imgsNbr {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(50%);
+    font-size: 25px;
+    color: $white-color;
+}
+
+.title {
+    color: $primary-color;
+    margin-top: 25px;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .panel {
+        display: block;
+    }
+}
+
+.equipment {
+    padding: 10px 0 0 15px;
+}
+
+.subTitle {
+    margin-top: 15px;
+
+    font-weight: 500;
+    color: $primary-color;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .tags {
+        padding: 0;
+        margin-top: 15px;
+    }
+}
+
+.tag {
+    background-color: $primary-color;
+    padding: 12px 17px;
+    margin: 15px 12px 0 0;
+    color: $white-color;
+    border-radius: 10px;
+}
+
+.filledStarIcon {
+    color: $primary-color;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.starIcon {
+    color: #a8a8a867;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.stars {
+    margin-right: 10px;
+
+	padding: 10px 0;
+}
+
+.box {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .box {
+        display: block;
+    }
+}
+
+.profileRating {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+@media (max-width: 768px) {
+    .profileRating {
+		padding-top: 25px;
+        flex-direction: row-reverse;
+        align-items: center;
+		justify-content: space-between;
+    }
+}
+.test {
+    width: 45%;
+}
+
+@media (max-width: 768px) {
+    .test {
+        width: 100%;
+    }
+}

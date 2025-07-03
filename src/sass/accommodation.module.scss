@@ -1,0 +1,128 @@
+@use "./global" as *;
+
+// Conteneur principal centré
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+// Header principal : titre + infos host/rating
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+// Bloc titre/location/tags
+.titleBlock {
+  flex: 1;
+}
+
+.title {
+  font-size: 2rem;
+  color: $primary-color;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+// Bloc host + rating à droite
+.hostRating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  min-width: 200px;
+
+  @media (max-width: 900px) {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    min-width: 0;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+// Bloc host (nom + photo) poussé à droite
+.host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: auto; // <-- pousse le bloc complètement à droite
+
+  @media (max-width: 600px) {
+    gap: 0.4rem;
+  }
+}
+
+.hostName {
+  color: $primary-color;
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-align: right;
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+  }
+}
+
+.hostImg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid $primary-color;
+  display: block;
+
+  @media (max-width: 600px) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+// Bloc rating (étoiles)
+.ratingBlock {
+  margin-top: 0.5rem;
+
+  @media (max-width: 900px) {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+// Collapses (description/équipements)
+.collapses {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

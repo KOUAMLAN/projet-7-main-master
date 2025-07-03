@@ -1,0 +1,20 @@
+@use "../sass/global" as *;
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #e3e3e3;
+  margin-right: 4px;
+  user-select: none;
+  transition: color 0.2s;
+}
+.star:last-child { margin-right: 0; }
+.starActive { color: #FF6060; }
+
+@media (max-width: 600px) {
+  .star { font-size: 1.2rem; margin-right: 3px; }
+}

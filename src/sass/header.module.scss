@@ -1,0 +1,27 @@
+@use "./global" as *;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.logo img {
+  width: 140px;
+}
+.nav {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+.link {
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.activeLink {
+  color: #FF6060;
+  text-decoration: underline;
+}

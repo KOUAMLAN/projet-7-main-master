@@ -1,0 +1,41 @@
+@use "../sass/global" as *;
+
+.footer {
+  background: $black-color;
+  padding: 40px 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $white-color;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.logo {
+  width: 122px;
+  margin-bottom: 24px;
+}
+
+.copyright {
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 0 20px 0;
+    margin-top: 40px;
+  }
+  .logo {
+    width: 100px;
+    margin-bottom: 16px;
+  }
+  .copyright {
+    font-size: 0.95rem;
+  }
+}
+
