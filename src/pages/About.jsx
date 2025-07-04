@@ -1,7 +1,6 @@
 import React from "react";
 import TaglineSection from "../components/Tagline";
 import aboutTaglineImg from "../assets/imgs/about-tagline.png";
-import Footer from "../components/Footer";
 import Collapse from "../components/Collapse";
 import styles from "../sass/about.module.scss";
 
@@ -16,24 +15,21 @@ const About = () => {
   const [openIndex, setOpenIndex] = React.useState(null);
 
   return (
-    <>
-      <div className={styles.container}>
-        <TaglineSection imgSrc={aboutTaglineImg} />
-        <section className={styles.collapses}>
-          {data.map((item, idx) => (
-            <Collapse
-              key={item.title}
-              title={item.title}
-              isOpen={openIndex === idx}
-              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-            >
-              <p>{item.content}</p>
-            </Collapse>
-          ))}
-        </section>
-      </div>
-      <Footer />
-    </>
+    <div className={styles.container}>
+      <TaglineSection imgSrc={aboutTaglineImg} />
+      <section className={styles.collapses}>
+        {data.map((item, idx) => (
+          <Collapse
+            key={item.title}
+            title={item.title}
+            isOpen={openIndex === idx}
+            onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+          >
+            <p>{item.content}</p>
+          </Collapse>
+        ))}
+      </section>
+    </div>
   );
 };
 

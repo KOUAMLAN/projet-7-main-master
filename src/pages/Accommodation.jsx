@@ -4,7 +4,6 @@ import accommodations from "../data/accommodations.json";
 import Gallery from "../components/Gallery";
 import Tag from "../components/Tag";
 import Rating from "../components/Rating";
-import Footer from "../components/Footer";
 import styles from "../sass/accommodation.module.scss";
 import collapseStyles from "../sass/collapse.module.scss";
 
@@ -36,66 +35,63 @@ function Accommodation() {
   const [openCollapse, setOpenCollapse] = React.useState(null);
 
   return (
-    <>
-      <main className={styles.container}>
-        <Gallery pictures={data.pictures} />
-        <div className={styles.header}>
-          <div className={styles.titleBlock}>
-            <h1 className={styles.title}>{data.title}</h1>
-            <p className={styles.location}>{data.location}</p>
-            <div className={styles.tags}>
-              {data.tags.map(tag => <Tag key={tag} tag={tag} />)}
-            </div>
-          </div>
-          <div className={styles.hostRating}>
-            <div className={styles.host}>
-              <span className={styles.hostName}>{data.host.name}</span>
-              <img className={styles.hostImg} src={data.host.picture} alt={data.host.name} />
-            </div>
-            <div className={styles.ratingBlock}>
-              <Rating rating={data.rating} />
-            </div>
+    <main className={styles.container}>
+      <Gallery pictures={data.pictures} />
+      <div className={styles.header}>
+        <div className={styles.titleBlock}>
+          <h1 className={styles.title}>{data.title}</h1>
+          <p className={styles.location}>{data.location}</p>
+          <div className={styles.tags}>
+            {data.tags.map(tag => <Tag key={tag} tag={tag} />)}
           </div>
         </div>
-        <div className={styles.collapses}>
-          {/* Description Collapse */}
-          <div className={collapseStyles.collapse}>
-            <CollapseHeader
-              title="Description"
-              isOpen={openCollapse === 0}
-              onClick={() => setOpenCollapse(openCollapse === 0 ? null : 0)}
-            />
-            {openCollapse === 0 && (
-              <div
-                className={collapseStyles.collapseContent}
-                id="collapse-content-Description"
-              >
-                <p>{data.description}</p>
-              </div>
-            )}
+        <div className={styles.hostRating}>
+          <div className={styles.host}>
+            <span className={styles.hostName}>{data.host.name}</span>
+            <img className={styles.hostImg} src={data.host.picture} alt={data.host.name} />
           </div>
-          {/* Équipements Collapse */}
-          <div className={collapseStyles.collapse}>
-            <CollapseHeader
-              title="Équipements"
-              isOpen={openCollapse === 1}
-              onClick={() => setOpenCollapse(openCollapse === 1 ? null : 1)}
-            />
-            {openCollapse === 1 && (
-              <div
-                className={collapseStyles.collapseContent}
-                id="collapse-content-Équipements"
-              >
-                <ul>
-                  {data.equipments.map(eq => <li key={eq}>{eq}</li>)}
-                </ul>
-              </div>
-            )}
+          <div className={styles.ratingBlock}>
+            <Rating rating={data.rating} />
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
+      <div className={styles.collapses}>
+        {/* Description Collapse */}
+        <div className={collapseStyles.collapse}>
+          <CollapseHeader
+            title="Description"
+            isOpen={openCollapse === 0}
+            onClick={() => setOpenCollapse(openCollapse === 0 ? null : 0)}
+          />
+          {openCollapse === 0 && (
+            <div
+              className={collapseStyles.collapseContent}
+              id="collapse-content-Description"
+            >
+              <p>{data.description}</p>
+            </div>
+          )}
+        </div>
+        {/* Équipements Collapse */}
+        <div className={collapseStyles.collapse}>
+          <CollapseHeader
+            title="Équipements"
+            isOpen={openCollapse === 1}
+            onClick={() => setOpenCollapse(openCollapse === 1 ? null : 1)}
+          />
+          {openCollapse === 1 && (
+            <div
+              className={collapseStyles.collapseContent}
+              id="collapse-content-Équipements"
+            >
+              <ul>
+                {data.equipments.map(eq => <li key={eq}>{eq}</li>)}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+    </main>
   );
 }
 
