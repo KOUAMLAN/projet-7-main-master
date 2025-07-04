@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Accommodation from "../pages/Accommodation";
 import Error from "../pages/Error";
-import Layout from "../components/Layout"; // <-- Ajoute cette ligne
+import Layout from "../components/Layout";
 
 function AppRouter() {
   return (
