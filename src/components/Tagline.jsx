@@ -1,21 +1,21 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import styles from "../sass/tagline.module.scss";
 
-const TaglineSection = (props) => {
-    return (
-        <div className={styles.taglineSection}>
-            <img
-                src={props.imgSrc}
-                alt="tagline"
-                className={styles.taglineImg}
-            />
-            <div className={styles.overlay}></div>
+function TaglineSection({ imgSrc, text }) {
+  return (
+    <div className={styles.taglineSection}>
+      <img src={imgSrc} alt="tagline" className={styles.taglineImg} />
+      <div className={styles.overlay}></div>
+      <div className={styles.tagline}>
+        <h1>{text}</h1>
+      </div>
+    </div>
+  );
+}
 
-            <div className={styles.tagline}>
-                <h1>{props.text}</h1>
-            </div>
-        </div>
-    );
+TaglineSection.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 export default TaglineSection;
